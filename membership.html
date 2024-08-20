@@ -1,0 +1,450 @@
+<html>
+    <meta charset="UTF-8">
+    <title>Recognition Roundtable</title>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+    function openNav() {
+      document.getElementById("navigationbar2").style.display = "block";
+      document.getElementById("close").style.display = "block";
+      document.getElementById("navigationbar2").style.width = "100%";
+    }
+
+    function closeNav() {
+      document.getElementById("navigationbar2").style.width = "0%";
+      document.getElementById("close").style.display = "none";
+      document.getElementById("navigationbar2").style.display = "none";
+    }
+    </script>
+    <style>
+    .close {
+        display:none;
+    }
+    @font-face {
+        font-family:paragraph;
+        src: url(paragraph.ttf);
+    }
+    .bodycontent1 {
+        display:flex;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-color: rgba(0, 0, 0, 0.5);
+        border-radius: 0px;
+        border-style: inset;
+        border-width: 5px;
+        width: 70%;
+        align-items:center;
+        justify-content:center;
+        margin-left:10%;
+    }
+    .footer {
+        border-width: 0px;
+        width: 90%;
+        height:5%;
+        margin:0px;
+        margin-left:10%;
+    }
+    .navigationbar p {
+        font-family:title;
+        font-size: 1.5vw;
+        text-decoration:none;
+    }
+    .navigationbar {
+        display:flex;
+        position: fixed;
+        background-color: black;
+        width: 10%;
+        height: 100%;
+        float: left;
+        justify-content: center;
+        box-shadow: 0px 5px 15px darkgrey;
+        z-index: 3;
+        transition:0.5s
+    }
+    .navigationbar2 p {
+        font-family:title;
+        font-size: 1.5vw;
+        text-decoration:none;
+        transition:0.5s;
+    }
+    .navigationbar2 {
+        display:flex;
+        position: fixed;
+        background-color: black;
+        width: 10%;
+        height: 100%;
+        float: left;
+        justify-content: center;
+        box-shadow: 0px 5px 15px darkgrey;
+        z-index: 3;
+    }
+    p {
+        font-family: paragraph;
+        color: white;
+        text-decoration:none;
+        font-size:1vw;
+        line-height:1.6;
+    }
+    h3 {
+        font-family: paragraph;
+        color: white;
+        font-size:2vw;
+    }
+    body {
+        margin: 0px;
+        -webkit-text-size-adjust: none;
+        background-image: url(mainbackground.png);
+    }
+    .scroll-container::-webkit-scrollbar {
+      display: none;
+    }
+    body::-webkit-scrollbar {
+      display: none;
+    }
+    @font-face {
+        font-family: title;
+        src: url(title.ttf);
+    }
+    .gradient-text {
+        background-color: #f3ec78;
+        background-image: linear-gradient(white, darkgoldenrod);
+        background-size: 100%;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-text-fill-color: transparent;
+        filter: drop-shadow(0px 0px 15px darkgrey);
+    }
+    .title {
+        display: flex;
+        width: 90%;
+        height: 30%;
+        float: right;
+        background-image: url(background.jpg);
+        margin: 0px;
+        background-repeat: no-repeat;
+        justify-content:center;
+        align-items:center;
+        background-size: cover;
+        color: white;
+        font-size: 4vw;
+        line-height: 2em;
+        box-shadow: 0px 5px 15px darkgrey;
+        margin-bottom:1%;
+    }
+    .title h1 {
+        font-family: title;
+    }
+    @media screen and (min-width: 1700px) {
+        .portraittitle {
+            display: none;
+        }
+        .landscapetitle {
+            display: inline-block;
+        }
+        .title img {
+            height: 35%;
+        }
+        .landscapetitle img {
+            height: 35%;
+        }
+        .landscapetitle h1 {
+            width: 100%;
+            margin-right: 5%;
+            vertical-align: middle;
+        }
+        .rrlogo {
+            display: none;
+        }
+        .mobilenav {
+            display:none;
+        }
+        .navigationbar {
+            display:block;
+        }
+    }
+    @media screen and (orientation: landscape) and (max-width: 1700px) {
+        .portraittitle {
+            display: none;
+        }
+        .landscapetitle {
+            display: inline-block;
+        }
+        .title img {
+            height: 35%;
+        }
+        .landscapetitle img {
+            height: 35%;
+        }
+        .landscapetitle h1 {
+            width: 100%;
+            margin-right: 5%;
+            vertical-align: middle;
+        }
+        .rrlogo {
+            display: block;
+        }
+        p {
+            font-size:2vw;
+        }
+        .mobilenav {
+            display:none;
+        }
+        .navigationbar {
+            display:block;
+        }
+    }
+    @media screen and (orientation: portrait) {
+        .title {
+            font-size: 5vw;
+            float: center;
+            width: 100%;
+        }
+        .title img {
+            height: 35%;
+        }
+        .landscapetitle {
+            display: none;
+        }
+        .portraittitle {
+            display: inline-block;
+        }
+        .navigationbar {
+            display:none;
+        }
+        .navigationbar2 {
+            display:none;
+        }
+        .bodycontent1 {
+            margin-left:0px;
+            width:95%
+        }
+        .footer {
+            margin-left:0px;
+            width:100%;
+        }
+        p {
+            font-size:3vw;
+        }
+        h3 {
+            font-size:4vw;
+        }
+        .navigationbar p {
+            font-size:4vw;
+        }
+        .navigationbar2 p {
+            font-size:4vw;
+        }
+    }
+    @media (pointer: coarse) {
+        p {
+            font-size:6vw;
+        }
+        h3 {
+            font-size:8vw;
+        }
+        .navigationbar2 p {
+            font-size:8vw;
+        }
+        .navigationbar {
+            display:none;
+        }
+        .navigationbar2 {
+            display:none;
+        }
+        .title {
+            font-size: 5vw;
+            float: center;
+            width: 100%;
+            height:80%;
+        }
+        .title img {
+            height: 80%;
+        }
+        .landscapetitle {
+            display: none;
+        }
+        .portraittitle {
+            display: inline-block;
+        }
+        .navigationbar {
+            display:none;
+        }
+        .navigationbar2 {
+            display:none;
+        }
+        .bodycontent1 {
+            margin-left:0px;
+            width:95%
+        }
+        .footer {
+            margin-left:0px;
+            width:100%;
+        }
+        p {
+            font-size:3vw;
+        }
+        h3 {
+            font-size:4vw;
+        }
+        .navigationbar p {
+            font-size:4vw;
+        }
+        .navigationbar2 p {
+            font-size:4vw;
+        }
+        .mobilenav {
+            display:block;
+        }
+    }
+    </style>
+    <body>
+        <span class="mobilenav"style="font-size:7vw;cursor:pointer;color:white;position:absolute;z-index:2;margin:5px;" onclick="openNav()">&#9776;</span>
+            <div id="navigationbar" class="navigationbar">
+            <center>
+            <a href="index.html"><p>Home</p></a>
+            <a href="contact.html"><p>Contact Us</p></a>
+            <a href="mission.html"><p>Our Mission</p></a>
+            <a href="qualifications.html"><p>Qualifications</p></a>
+            <a href="benefits.html"><p>Benefits</p></a>
+            <a href="membership.html"><p>Membership Years</p></a>
+            </center>
+        </div>
+        <div id="navigationbar2" class="navigationbar2">
+            <a class="close" id="close" href="javascript:void(0)" class="closebtn" style="font-size:11vw;cursor:pointer;color:white;position:absolute;z-index:4;margin:5px;margin-top:0px;text-decoration:none;" onclick="closeNav()">&times;</a>
+        <center>
+        <a href="index.html"><p>Home</p></a>
+        <a href="contact.html"><p>Contact Us</p></a>
+        <a href="mission.html"><p>Our Mission</p></a>
+        <a href="qualifications.html"><p>Qualifications</p></a>
+        <a href="benefits.html"><p>Benefits</p></a>
+        <a href="membership.html"><p>Membership Years</p></a>
+        </center>
+    </div>
+        <center>
+            <div class="title">
+                <div class="gradient-text">
+                    <div class="landscapetitle">
+                        <center>
+                            <span class="centertext"><h1>MEMBERSHIP YEARS</h1></span>
+                        </center>
+                    </div>
+                    <div class="portraittitle">
+                        <h1>MEMBERSHIP</h1>
+                        <h1>YEARS</h1>
+                    </div>
+                </div>
+            </div>
+            <center>
+            <div class="bodycontent1">
+                <center>
+                    <center>
+                        <p>1999:<br><br>
+                        A-1 Awards, Inc.<br>
+                        Steve & Nora Capper<br><br>
+
+                        Total Awards & Promotions, Inc.<br>
+                        Dave & Donna Gray<br><br>
+
+                        Winner’s Choice, Inc.<br>
+                        Brian & Susan Martin<br>
+
+                        Cowart Awards, Inc.<br>
+                        Cheryl & Steve Taylor<br><br>
+
+                        2001:<br><br>
+                        Dynamic Trophies & Awards<br>
+                        Pat & Pam Holley<br><br>
+
+                        Lamont Awards & Apparel<br>
+                        Mike & Claudia Montecalvo<br><br>
+
+                        2002:<br><br>
+                        AwardsMart<br>
+                        Gordon & Sherry Grabill<br><br>
+
+                        2003:<br><br>
+                        H J Trophies & Awards, Inc.<br>
+                        Eric, Rick & Gini DeWolf<br><br>
+
+                        B-J Trophies, Awards & Gifts<br>
+                        Floyd, MaryLee & Brian  Hershberger<br><br>
+
+                        Woltman Trophies & Awards<br>
+                        Rick Woltman<br><br>
+
+                        2007:<br><br>
+                        Arnold For Awards<br>
+                        Kami Arnold Kevin Arnold<br><br>
+
+                        Awards & More<br>
+                        Richard & Laurie Schaefer<br><br>
+
+                        Columbia Awards<br>
+                        Edward & Victoria Korbyl<br>
+                        Richard Korbyl<br><br>
+
+                        Cruces Trophy & Awards Center<br>
+                        Jeff & Joy Giffing<br><br>
+
+                        2009:<br><br>
+                        San Dieguito Trophy, Inc.<br>
+                        Niels & Tina Norby<br><br>
+
+                        Gino’s Awards, Inc.<br>
+                        Gino P. Zavarella, Sr.<br>
+                        Gino P., Jr. & Karen Zavarella<br><br>
+
+                        Clarke Recognition Products, Ltd.<br>
+                        Peter & Colette Clarke<br><br>
+
+                        2012:<br><br>
+                        Jan-Mar Trophy Co., Inc.<br>
+                        Mario & Janet Scarano<br><br>
+
+                        2014:<br><br>
+                        The Finer Line, Inc.<br>
+                        Mark & Kim Case<br><br>
+
+                        2016:<br><br>
+                        ACF Awards & Ad Specialties<br>
+                        Bruce & Darlene Anderson<br><br>
+
+                        Southern Trophy House, Inc.<br>
+                        Sue Brown, Wilson & Kathy Brim<br><br>
+
+                        2019:<br><br>
+                        Blue Sky Apparel & Promotions<br>
+                        Kathy Gralike<br><br>
+
+                        Boulevard Trophy & Engraving, Inc.<br>
+                        Joseph Sant<br><br>
+
+                        New River Engraving, Inc.<br>
+                        Jay & Becci Nagle<br><br>
+
+                        QuickTrophy, LLC<br>
+                        Terry & Anne Dehring<br><br>
+
+                        Rallye Productions, Inc.<br>
+                        Brian & Lori Genrich  Lori & Scott Strobl<br><br>
+
+                        Rixtine Recognition<br>
+                        Tim & Cindy Hoffman<br><br>
+
+                        Trophy Mart<br>
+                        Josh & Stacey Perelman<br><br>
+</p>
+                    </center>
+                </center>
+            </div>
+            </center>
+        </center>
+        </div>
+        <br>
+        <div class="footer">
+            <center>
+                <p style="text-shadow: black 0 1px 15px;">© 2024 Recognition Roundtable. All Rights Reserved.</p>
+            </center>
+        </div>
+    </body>
+</html>
