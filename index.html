@@ -34,48 +34,12 @@
             width: 70%;
             align-items:center;
             justify-content:center;
-            margin-left:10%;
         }
         .footer {
             border-width: 0px;
             width: 90%;
             height:5%;
             margin:0px;
-            margin-left:10%;
-        }
-        .navigationbar p {
-            font-family:title;
-            font-size: 1.5vw;
-            text-decoration:none;
-        }
-        .navigationbar {
-            display:flex;
-            position: fixed;
-            background-color: black;
-            width: 10%;
-            height: 100%;
-            float: left;
-            justify-content: center;
-            box-shadow: 0px 5px 15px darkgrey;
-            z-index: 3;
-            transition:0.5s
-        }
-        .navigationbar2 p {
-            font-family:title;
-            font-size: 1.5vw;
-            text-decoration:none;
-            transition:0.5s;
-        }
-        .navigationbar2 {
-            display:flex;
-            position: fixed;
-            background-color: black;
-            width: 10%;
-            height: 100%;
-            float: left;
-            justify-content: center;
-            box-shadow: 0px 5px 15px darkgrey;
-            z-index: 3;
         }
         p {
             font-family: paragraph;
@@ -113,53 +77,61 @@
             -webkit-text-fill-color: transparent;
             -moz-text-fill-color: transparent;
             filter: drop-shadow(0px 0px 15px darkgrey);
+            width:100%;
         }
         .title {
             display: flex;
-            width: 90%;
-            height: 80%;
-            float: right;
+            width: 100%;
+            height: 100px;
+            align-items:center;
             background-image: url(background.jpg);
             margin: 0px;
             background-repeat: no-repeat;
-            justify-content:center;
-            align-items:center;
             background-size: cover;
             color: white;
             font-size: 4vw;
             line-height: 2em;
             box-shadow: 0px 5px 15px darkgrey;
             margin-bottom:1%;
+            font-family:title;
         }
         .title h1 {
             font-family: title;
         }
+        .landscapetitle {
+            width:100%;
+            margin-left:1%;
+            margin-right:1%;
+        }
+        .navigationbar2 {
+            display:flex;
+            position: fixed;
+            background-color: black;
+            width: 10%;
+            height: 100%;
+            float: left;
+            justify-content: center;
+            box-shadow: 0px 5px 15px darkgrey;
+            z-index: 3;
+        }
+
         @media screen and (min-width: 1700px) {
             .portraittitle {
                 display: none;
             }
             .landscapetitle {
-                display: inline-block;
-            }
-            .title img {
-                height: 35%;
-            }
-            .landscapetitle img {
-                height: 35%;
+                display: flex;
             }
             .landscapetitle h1 {
                 width: 100%;
                 margin-right: 5%;
                 vertical-align: middle;
             }
-            .rrlogo {
-                display: none;
-            }
             .mobilenav {
                 display:none;
             }
-            .navigationbar {
-                display:block;
+            .navigationbar2 {
+                display:none;
             }
         }
         @media screen and (orientation: landscape) and (max-width: 1700px) {
@@ -167,17 +139,10 @@
                 display: none;
             }
             .landscapetitle {
-                display: inline-block;
-            }
-            .title img {
-                height: 35%;
-            }
-            .landscapetitle img {
-                height: 35%;
+                display: flex;
             }
             .landscapetitle h1 {
                 width: 100%;
-                margin-right: 5%;
                 vertical-align: middle;
             }
             .rrlogo {
@@ -192,8 +157,8 @@
             .mobilenav {
                 display:none;
             }
-            .navigationbar {
-                display:block;
+            .navigationbar2 {
+                display:none;
             }
         }
         @media screen and (orientation: portrait) {
@@ -202,14 +167,14 @@
                 float: center;
                 width: 100%;
             }
-            .title img {
-                height: 35%;
-            }
             .landscapetitle {
                 display: none;
             }
             .portraittitle {
-                display: inline-block;
+                display: flex;
+                align-items:center;
+                justify-content:center;
+
             }
             .navigationbar {
                 display:none;
@@ -260,13 +225,14 @@
                 width: 100%;
             }
             .title img {
-                height: 35%;
+                height: 5%;
             }
             .landscapetitle {
                 display: none;
             }
             .portraittitle {
-                display: inline-block;
+                display: flex;
+                align-items:center;
             }
             .navigationbar {
                 display:none;
@@ -301,16 +267,6 @@
     </style>
     <body>
         <span class="mobilenav"style="font-size:7vw;cursor:pointer;color:white;position:absolute;z-index:2;margin:5px;" onclick="openNav()">&#9776;</span>
-            <div id="navigationbar" class="navigationbar">
-            <center>
-            <a href="index.html"><p>Home</p></a>
-            <a href="contact.html"><p>Contact Us</p></a>
-            <a href="mission.html"><p>Our Mission</p></a>
-            <a href="qualifications.html"><p>Qualifications</p></a>
-            <a href="benefits.html"><p>Benefits</p></a>
-            <a href="membership.html"><p>Membership Years</p></a>
-            </center>
-        </div>
         <div id="navigationbar2" class="navigationbar2">
             <a class="close" id="close" href="javascript:void(0)" class="closebtn" style="font-size:11vw;cursor:pointer;color:white;position:absolute;z-index:4;margin:5px;margin-top:0px;text-decoration:none;" onclick="closeNav()">&times;</a>
         <center>
@@ -322,19 +278,17 @@
         <a href="membership.html"><p>Membership Years</p></a>
         </center>
     </div>
-        <center>
+      <center>
             <div class="title">
                 <div class="gradient-text">
-                    <div class="landscapetitle">
-                        <center>
-                            <div class="rrlogo"><img src="rr.png" /></div>
-                            <span class="centertext"><h1>RECOGNITION ROUNDTABLE</h1></span>
-                        </center>
+                    <div class="landscapetitle" style="align-items:center;">
+                      <img style="height:75px; margin-right:10px;" src="rr.png"><span style="font-size:30px; font-family:title;">Recognition Roundtable</span></img>
                     </div>
+                    <center>
                     <div class="portraittitle">
-                        <h1>RECOGNITION</h1>
-                        <img src="rr.png" />
-                        <h1>ROUNDTABLE</h1>
+                      <span style="font-size:4vw; font-family:title;">RECOGNITION</span>
+                        <img style="height:75px; margin:none;" src="rr.png" />
+                      <span style="font-size:4vw; font-family:title;">ROUNDTABLE</span>
                     </div>
                 </div>
             </div>
