@@ -84,37 +84,37 @@
             background-size: cover;
             background-position: center;
             width: 100%;
-            min-height: 40vh;  /* Adjusted for mobile responsiveness */
-            max-height: 60vh;
+            height: 60vh;
             position: relative;
-            justify-content: flex-start; /* Align content to the left */
-            align-items: center; /* Keep vertical alignment centered */
+            justify-content: center;
+            align-items: flex-start;
             flex-direction: column;
-            padding: 20px 10px;
+            max-width: 100%;
+            animation: slideUp 1s ease-in-out;
+            padding: 20px 10px 10px 10px;
             box-sizing: border-box;
-            text-align: left; /* Align text to the left */
         }
 
         .banner-text {
             font-family: title;
             font-weight: bold;
+            text-align: left;
             color: white;
             font-size: 3rem;
             padding: 10px;
             z-index: 2;
-            max-width: 90%; /* Ensure the text doesn't overflow */
+            max-width: 70%;
             animation: fadeInText 2s ease-in-out;
-            text-align: left; /* Ensure banner text is aligned to the left */
         }
 
         .banner-subtext {
             font-family: paragraph;
             font-size: 1.5rem;
+            text-align: left;
             color: white;
-            max-width: 90%; /* Ensure the subtext doesn't overflow */
+            max-width: 70%;
             margin-top: 10px;
             line-height: 1.5;
-            text-align: left; /* Align subtext to the left */
         }
 
         /* Footer */
@@ -175,7 +175,30 @@
         }
 
         /* Media Queries for responsiveness */
-        @media screen and (max-width: 1000px) {
+        /* Larger breakpoints for smoother transitions */
+        @media screen and (max-width: 1440px) {
+            .title .logo span {
+                font-size: 24px;
+            }
+
+            .banner-text {
+                font-size: 2.8rem;
+            }
+
+            .banner-subtext {
+                font-size: 1.3rem;
+            }
+
+            .footer {
+                font-size: 0.95rem;
+            }
+
+            .fun_box {
+                width: 30%;
+            }
+        }
+
+        @media screen and (max-width: 1024px) {
             .title .logo span {
                 font-size: 22px;
             }
@@ -193,11 +216,11 @@
             }
 
             .fun_box {
-                width: 45%;
+                width: 40%;
             }
         }
 
-        @media screen and (max-width: 600px) {
+        @media screen and (max-width: 768px) {
             .title .logo span {
                 font-size: 20px;
             }
@@ -211,16 +234,17 @@
             }
 
             .footer {
-                font-size: 0.8rem;
+                font-size: 0.85rem;
             }
 
             .fun_box {
-                width: 90%;
+                width: 45%;
             }
+        }
 
-            /* Prevent overlap and reduce size further in portrait */
-            .bodycontent1 {
-                min-height: 40vh;
+        @media screen and (max-width: 600px) {
+            .title .logo span {
+                font-size: 18px;
             }
 
             .banner-text {
@@ -233,7 +257,53 @@
 
             .footer {
                 font-size: 0.8rem;
-                margin-top: 10px;
+            }
+
+            .fun_box {
+                width: 90%;
+            }
+
+            /* Prevent overlap and reduce size further in portrait */
+            .bodycontent1 {
+                height: 50vh;
+            }
+
+            .banner-text {
+                font-size: 1.6rem;
+            }
+
+            .banner-subtext {
+                font-size: 0.8rem;
+            }
+        }
+
+        /* High DPI / Retina displays */
+        @media screen and (min-resolution: 2dppx) {
+            .title .logo img {
+                height: 60px; /* Larger logo for retina screens */
+            }
+
+            .banner-text {
+                font-size: 3.2rem; /* Slightly larger font for retina screens */
+            }
+
+            .banner-subtext {
+                font-size: 1.6rem;
+            }
+        }
+
+        /* For coarse pointer devices (touchscreens) */
+        @media (pointer: coarse) {
+            .fun_box {
+                width: 80%; /* Make boxes larger for touch interaction */
+            }
+
+            .banner-text {
+                font-size: 2.5rem;
+            }
+
+            .banner-subtext {
+                font-size: 1.3rem;
             }
         }
 
@@ -273,8 +343,8 @@
         <h1>Welcome to Recognition Roundtable!</h1>
     </div>
     <div class="banner-subtext">
-        <p><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong><br>
-            Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.</p>
+        <p><strong>We are a prestigious group of recognition dealers across the globe!</strong><br>
+            Our goal is to guarantee quality, honesty, and commitment with every one of our products.</p>
     </div>
 </div>
 
