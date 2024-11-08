@@ -87,32 +87,37 @@
             background-size: cover;
             background-position: center;
             width: 100%;
-            min-height: 40vh;
+            min-height: 50vh;
+            max-height: 70vh;
             position: relative;
             padding: 20px;
             box-sizing: border-box;
             text-align: left;
+            overflow: hidden; /* Prevent text overflow */
         }
 
         .banner-text {
             font-family: title;
             font-weight: bold;
             color: white;
-            font-size: 3vw; /* Much smaller text */
+            font-size: 3vw; /* Smaller text size */
             padding: 10px;
             z-index: 2;
             max-width: 80%;
+            word-wrap: break-word; /* Ensure text wraps within the container */
+            overflow-wrap: break-word;
             animation: fadeInText 2s ease-in-out;
         }
 
         .banner-subtext {
             font-family: paragraph;
-            font-size: 2vw; /* Smaller text */
+            font-size: 2vw;
             text-align: left;
             color: white;
             max-width: 80%;
             margin-top: 10px;
             line-height: 1.5;
+            word-wrap: break-word;
         }
 
         /* Footer */
