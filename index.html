@@ -84,37 +84,37 @@
             background-size: cover;
             background-position: center;
             width: 100%;
-            height: 60vh;
+            min-height: 40vh;  /* Adjusted for mobile responsiveness */
+            max-height: 60vh;
             position: relative;
-            justify-content: center;
-            align-items: flex-start;
+            justify-content: flex-start; /* Align content to the left */
+            align-items: center; /* Keep vertical alignment centered */
             flex-direction: column;
-            max-width: 100%;
-            animation: slideUp 1s ease-in-out;
-            padding: 20px 10px 10px 10px;
+            padding: 20px 10px;
             box-sizing: border-box;
+            text-align: left; /* Align text to the left */
         }
 
         .banner-text {
             font-family: title;
             font-weight: bold;
-            text-align: left;
             color: white;
             font-size: 3rem;
             padding: 10px;
             z-index: 2;
-            max-width: 70%;
+            max-width: 90%; /* Ensure the text doesn't overflow */
             animation: fadeInText 2s ease-in-out;
+            text-align: left; /* Ensure banner text is aligned to the left */
         }
 
         .banner-subtext {
             font-family: paragraph;
             font-size: 1.5rem;
-            text-align: left;
             color: white;
-            max-width: 70%;
+            max-width: 90%; /* Ensure the subtext doesn't overflow */
             margin-top: 10px;
             line-height: 1.5;
+            text-align: left; /* Align subtext to the left */
         }
 
         /* Footer */
@@ -220,7 +220,7 @@
 
             /* Prevent overlap and reduce size further in portrait */
             .bodycontent1 {
-                height: 50vh;
+                min-height: 40vh;
             }
 
             .banner-text {
