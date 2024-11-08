@@ -1,389 +1,242 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Recognition Roundtable</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="favicon.png">
-    <script>
-    function openNav() {
-      document.getElementById("navigationbar2").style.display = "block";
-      document.getElementById("close").style.display = "block";
-      document.getElementById("navigationbar2").style.width = "100%";
-    }
-
-    function closeNav() {
-      document.getElementById("navigationbar2").style.width = "0%";
-      document.getElementById("close").style.display = "none";
-      document.getElementById("navigationbar2").style.display = "none";
-    }
-    </script>
     <style>
-        .close {
-            display:none;
-        }
+        /* Font Settings */
         @font-face {
-            font-family:paragraph;
-            src: url(paragraph.ttf);
-        }
-        .bodycontent1 {
-            display:flex;
-            background-color: rgba(0, 0, 0, 0.5);
-            border-color: goldenrod;
-            border-radius: 0px;
-            border-style: inset;
-            border-width: 5px;
-            width: 70%;
-            align-items:center;
-            justify-content:center;
-        }
-        .footer {
-            border-width: 0px;
-            width: 90%;
-            height:5%;
-            margin:0px;
-        }
-        p {
             font-family: paragraph;
-            color: white;
-            text-decoration:none;
-            font-size:1vw;
-            line-height:1.6;
+            src: url('paragraph.ttf');
         }
-        h3 {
-            font-family: paragraph;
-            color: white;
-            font-size:2vw;
-        }
-        body {
-            margin: 0px;
-            -webkit-text-size-adjust: none;
-            background-image: url(mainbackground.png);
-        }
-        .scroll-container::-webkit-scrollbar {
-          display: none;
-        }
-        body::-webkit-scrollbar {
-          display: none;
-        }
+
         @font-face {
             font-family: title;
-            src: url(title.ttf);
+            src: url('title.otf');
         }
-        .gradient-text {
-            background-color: #f3ec78;
-            background-image: linear-gradient(white, darkgoldenrod);
-            background-size: 100%;
-            -webkit-background-clip: text;
-            -moz-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            -moz-text-fill-color: transparent;
-            filter: drop-shadow(0px 0px 15px darkgrey);
-            width:100%;
+
+        body {
+            margin: 0;
+            padding: 0;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column; /* allows footer to be pushed to the bottom */
+            justify-content: flex-start;
+            background-image: url('mainbackground.png');
+            background-size: cover;
+            animation: fadeIn 2s ease-in-out;
+            box-sizing: border-box;
+            overflow-x: hidden;
         }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Title Section */
         .title {
             display: flex;
+            justify-content: flex-start; /* left align */
+            align-items: center; /* center vertically */
+            background-color: rgba(0, 0, 0, 0.65);
+            padding: 20px 30px;
             width: 100%;
-            height: 100px;
-            align-items:center;
-            background-image: url(background.jpg);
-            margin: 0px;
-            background-repeat: no-repeat;
-            background-size: cover;
-            color: white;
-            font-size: 4vw;
-            line-height: 2em;
-            box-shadow: 0px 5px 15px darkgrey;
-            margin-bottom:1%;
-            font-family:title;
+            box-sizing: border-box;
+            box-shadow: 0px 5px 15px black;
+            animation: fadeIn 2s ease-in-out;
         }
-        .title h1 {
+
+        .title .logo {
+            display: flex;
+            align-items: center;
+            margin-right: 15px; /* space between logo and text */
+        }
+
+        .title .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .title .logo span {
+            font-size: 22px; /* smaller title font */
             font-family: title;
-        }
-        .landscapetitle {
-            width:100%;
-            margin-left:1%;
-            margin-right:1%;
-        }
-        .navigationbar2 {
-            display:flex;
-            position: fixed;
-            background-color: black;
-            width: 10%;
-            height: 100%;
-            float: left;
-            justify-content: center;
-            box-shadow: 0px 5px 15px darkgrey;
-            z-index: 3;
+            text-shadow: 0 0 15px darkgrey;
+            line-height: 1.2;
+            animation: fadeInText 2s ease-in-out; /* fade-in for title */
         }
 
-        @media screen and (min-width: 1700px) {
-            .portraittitle {
-                display: none;
-            }
-            .landscapetitle {
-                display: flex;
-            }
-            .landscapetitle h1 {
-                width: 100%;
-                margin-right: 5%;
-                vertical-align: middle;
-            }
-            .mobilenav {
-                display:none;
-            }
-            .navigationbar2 {
-                display:none;
-            }
+        .title .contact-info {
+            font-size: 18px;
+            font-color: #f3ec78;
+            font-family: paragraph;
+            text-align: right;
+            margin-left: auto; /* push to the right */
         }
-        @media screen and (orientation: landscape) and (max-width: 1700px) {
-            .portraittitle {
-                display: none;
-            }
-            .landscapetitle {
-                display: flex;
-            }
-            .landscapetitle h1 {
-                width: 100%;
-                vertical-align: middle;
-            }
-            .rrlogo {
-                display: block;
-            }
-            p {
-                font-size:2vw;
-            }
-            h1 {
-                font-size:3vw;
-            }
-            .mobilenav {
-                display:none;
-            }
-            .navigationbar2 {
-                display:none;
-            }
-        }
-        @media screen and (orientation: portrait) {
-            .title {
-                font-size: 5vw;
-                float: center;
-                width: 100%;
-            }
-            .landscapetitle {
-                display: none;
-            }
-            .portraittitle {
-                display: flex;
-                align-items:center;
-                justify-content:center;
 
+        .title .contact-info a {
+            font-weight: bold;
+            color: #f3ec78;
+        }
+
+        /* Body Content Section */
+        .bodycontent1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.6); /* semi-transparent background */
+            border-radius: 15px;
+            width: 80%;
+            margin: 2% auto;
+            padding: 20px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+            animation: slideUp 1s ease-in-out; /* sliding effect */
+            flex-grow: 1; /* ensures this section takes up remaining space */
+        }
+
+        .bodycontent1 h2 {
+            font-family: title;
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px darkgrey;
+        }
+
+        .bodycontent1 p {
+            font-family: paragraph;
+            font-size: 1.2rem;
+            color: white;
+            text-align: left;  /* Align text to the left for better readability */
+            max-width: 80%;
+            margin-bottom: 20px;
+            white-space: pre-wrap; /* Preserve line breaks and whitespace */
+        }
+
+        /* Footer */
+        .footer {
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            font-size: 1rem;
+            position: relative;
+            bottom: 0;
+            margin-top: auto; /* this will push the footer to the bottom */
+        }
+
+        /* Keyframe Animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes fadeInText {
+            0% { opacity: 0; transform: translateY(10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideUp {
+            0% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Media Queries for responsiveness */
+        @media screen and (max-width: 1000px) {
+            .title .logo span {
+                font-size: 20px;
             }
-            .navigationbar {
-                display:none;
+
+            .bodycontent1 h2 {
+                font-size: 2.2rem;
             }
-            .navigationbar2 {
-                display:none;
+
+            .bodycontent1 p {
+                font-size: 1rem;
             }
-            .bodycontent1 {
-                margin-left:0px;
-                width:95%
-            }
+
             .footer {
-                margin-left:0px;
-                width:100%;
-            }
-            p {
-                font-size:3vw;
-            }
-            h3 {
-                font-size:4vw;
-            }
-            .navigationbar p {
-                font-size:4vw;
-            }
-            .navigationbar2 p {
-                font-size:4vw;
+                font-size: 0.9rem;
             }
         }
-        @media (pointer: coarse) {
-            p {
-                font-size:6vw;
+
+        @media screen and (max-width: 600px) {
+            .title .logo span {
+                font-size: 18px;
             }
-            h3 {
-                font-size:8vw;
+
+            .bodycontent1 h2 {
+                font-size: 1.8rem;
             }
-            .navigationbar2 p {
-                font-size:8vw;
+
+            .bodycontent1 p {
+                font-size: 0.9rem;
             }
-            .navigationbar {
-                display:none;
-            }
-            .navigationbar2 {
-                display:none;
-            }
-            .title {
-                font-size: 5vw;
-                float: center;
-                width: 100%;
-            }
-            .title img {
-                height: 5%;
-            }
-            .landscapetitle {
-                display: none;
-            }
-            .portraittitle {
-                display: flex;
-                align-items:center;
-            }
-            .navigationbar {
-                display:none;
-            }
-            .navigationbar2 {
-                display:none;
-            }
-            .bodycontent1 {
-                margin-left:0px;
-                width:95%
-            }
+
             .footer {
-                margin-left:0px;
-                width:100%;
+                font-size: 0.8rem;
             }
-            p {
-                font-size:3vw;
-            }
-            h3 {
-                font-size:4vw;
-            }
-            .navigationbar p {
-                font-size:4vw;
-            }
-            .navigationbar2 p {
-                font-size:4vw;
-            }
-            .mobilenav {
-                display:block;
+
+            .bodycontent1 {
+                width: 90%;
             }
         }
     </style>
-    <body>
-        <span class="mobilenav"style="font-size:7vw;cursor:pointer;color:white;position:absolute;z-index:2;margin:5px;" onclick="openNav()">&#9776;</span>
-        <div id="navigationbar2" class="navigationbar2">
-            <a class="close" id="close" href="javascript:void(0)" class="closebtn" style="font-size:11vw;cursor:pointer;color:white;position:absolute;z-index:4;margin:5px;margin-top:0px;text-decoration:none;" onclick="closeNav()">&times;</a>
-        <center>
-        <a href="index.html"><p>Home</p></a>
-        <a href="mission.html"><p>About Us</p></a>
-        <a href="benefits.html"><p>Join Us</p></a>
-        <a href="contact.html"><p>Contact Us</p></a>
-        </center>
+</head>
+<body>
+
+<!-- Title Section -->
+<div class="title">
+    <div class="logo">
+        <img src="rr.png" alt="Logo">
+        <span><a href="index.html">Recognition Roundtable</a></span>
     </div>
-      <center>
-            <div class="title">
-                <div class="gradient-text">
-                    <div class="landscapetitle" style="align-items:center;">
-                      <img style="height:75px; margin-right:10px;" src="rr.png"></img><a href="index.html"><span style="font-size:30px; font-family:title;">Recognition Roundtable</span></a>
-                      <a style="display:block;  margin-left:auto;" href="mission.html"><span style="font-family:title; font-size:30px; display:block;margin-left:auto;">About Us</span></a>
-                      <a style="display:block;" href="benefits.html"><span style="font-family:title; font-size:30px; display:block; margin-left: 15px;">Join Us</span></a>
-                      <a style="display:block;" href="contact.html"><span style="font-family:title; font-size:30px; display:block; margin-left: 15px; margin-right:45px;">Contact Us</span></a>
-                    </div>
-                    <center>
-                    <div class="portraittitle">
-                      <span style="font-size:4vw; font-family:title;">RECOGNITION</span>
-                        <img style="height:75px; margin:none;" src="rr.png" />
-                      <span style="font-size:4vw; font-family:title;">ROUNDTABLE</span>
-                    </div>
-                </div>
-            </div>
-            <center>
-            <div class="bodycontent1">
-                <center>
-                    <center>
-                        <h3>Mission Statement – Statement of Purpose</h3><p>
+    <div class="contact-info">
+        <p><a href="tel:+13527322249">Phone: (352) 732-2249</a></p>
+    </div>
+</div>
 
+<!-- Body Content Section -->
+<div class="bodycontent1">
+    <h2>About Us</h2>
+    <p>Mission Statement – Statement of Purpose<br><br>
+        The purpose of the Recognition Roundtable is to assemble a group of experienced recognition specialists who are in the field of supplying those in need of products and services to recognize accomplishment.<br><br>
+        The objectives of the Recognition Roundtable are:<br>
+        - To exchange ideas and successful business practices among its members.<br>
+        - To be a positive influence in our industry to promote its growth.<br>
+        - To promote the use of recognition to the highest level of professionalism.<br>
+        - To promote the integrity of the offerings of the Recognition Roundtable.<br><br>
 
-                        The purpose of the Recognition Roundtable is to assemble a group of experienced recognition
-                        specialists who are in the field of supplying those in need of products and services to recognize accomplishment.<br><br><br>
+        The premiere “Statement of Purpose” will be to service our memberships’ clientele in a manner that puts the interest of the end user at the forefront, yet to maintain a profit to share with our family of employees and sustain the life of our business.  The Recognition Roundtable is comprised of a selected, elite group of proven professionals who have the interest of their community and industry in mind at all times.<br><br>
 
+        The Recognition Roundtable will promote continued education of its membership with the most modern and state of the art procedures with ethics and balance.  Our membership is free to conduct business and commerce worldwide without restriction of territories or boundaries.  The membership will not support nor adhere to unlawful or unethical practices, either individually or collectively.<br><br>
 
+        The Recognition Roundtable will promote promotional advertising as a group for the common purpose of the exposure of all of its membership.  The Recognition Roundtable’s membership will individually and collectively promote this group with logos, image brochures, catalogs and other products approved by its membership.<br><br>
 
-                        The objectives of the Recognition Roundtable are:<br><br>
-	To exchange ideas and successful business practices among its members.<br>
-	To be a positive influence in our industry to promote its growth.<br>
-	To promote the use of recognition to the highest level of professionalism.<br>
-	To promote the integrity of the offerings of the Recognition Roundtable.<br>
-	To promote recognition products and services of the highest quality.<br>
-	To promote dependable, on time delivery.<br>
-	To promote reasonable, fair and profitable pricing policies.<br>
-	To promote advanced education of the experienced recognition dealer.<br>
-	To offer product and service discounts on a voluntary basis.<br><br><br>
+        Code of Ethics<br><br>
+        PURPOSE:<br><br>
+        The purpose of a “Code of Ethics” is to work for the good of the entire membership of the Recognition Roundtable. This code should work in concert with the by-laws of the Recognition Roundtable and reinforce each member firm.<br><br>
 
+        It is further understood that each member must be willing to abide by a “Code of Ethics” for the benefit of Recognition Roundtable membership. The Recognition Round table by-laws and code of ethics act as the agreed terms of membership. There shall be a focus on giving to the industry education by example and participation.<br><br>
 
+        With membership in the Recognition Roundtable there may be special privileges such as buying power and special offerings. Also coupled with these special privileges each member agrees to abide by the “By-laws” and “Code of Ethics” that accompany membership in the Recognition Roundtable.<br><br>
 
-                        The premiere “Statement of Purpose” will be to service our memberships’ clientele in a manner that
-                        puts the interest of the end user at the forefront, yet to maintain a profit to share with our family of employees and sustain the life of our business.  The Recognition Roundtable is comprised of a
-                        selected, elite group of proven professionals who have the interest of their community and industry in mind at all times.<br><br>
+        CODE OF ETHICS<br><br>
+        I)INTEGRITY<br><br>
+        A)Character involves us personally, professionally and in the business community. Ones' personal Character is power and a reflection on the reputation of the Recognition Roundtable.<br><br>
+        B)Loyalty to our fellow members, our industry, our vendor partners, our community, and our family must be at the forefront of the purpose of the Recognition Roundtable.<br><br>
+        C)Positive Attitude with our speech and actions within the Recognition Roundtable meetings and the business community are imperative. All members should have full confidence in what is said in Recognition Roundtable meetings remains private and not shared with anyone outside.<br><br>
+        D)Respect the opinions and thoughts of our members and our industry associates. Show respect to fellow Recognition Roundtable members by not actively nor competitively competing with known member's accounts.<br><br>
+        E)Sharing Information with other Recognition Roundtable members shall be held in strict confidentiality and solitude.<br><br>
+    </p>
+</div>
 
-                        The Recognition Roundtable will promote continued education of its membership with the most
-                        modern and state of the art procedures with ethics and balance.  Our membership is free to conduct business and commerce worldwide without restriction of territories or boundaries.  The membership
-                        will not support nor adhere to unlawful or unethical practices, either individually or collectively.<br><br>
+<!-- Footer -->
+<div class="footer">
+    <p>© 2024 Recognition Roundtable. All Rights Reserved.</p>
+</div>
 
-                        The Recognition Roundtable will promote promotional advertising as a group for the common purpose of the exposure of all of its membership.  The Recognition Roundtable’s membership will individually and collectively promote this group with logos, image brochures, catalogs and other products approved by its membership.</p>
-                        <br><h3>Code of Ethics</h3>
-                        <p><br>
-
-                        PURPOSE:<br><br>
-
-                        The purpose of a “Code of Ethics” is to work for the good of the entire
-                        membership of the Recognition Roundtable. This code should work in concert
-                        with the by-laws of the Recognition Roundtable and reinforce each member firm.<br><br>
-
-                        It is further understood that each member must be willing to abide by a
-                        “Code of Ethics” for the benefit of Recognition Roundtable membership. The
-                        Recognition Round table by-laws and code of ethics act as the agreed terms of
-                        membership. There shall be a focus on giving to the industry education by
-                        example and participation.<br><br>
-
-                        With membership in the Recognition Roundtable there may be special
-                        privileges such as buying power and special offerings. Also coupled with these
-                        special privileges each member agrees to abide by the “By-laws” and “Code of
-                        Ethics” that accompany membership in the Recognition Roundtable.<br><br>
-
-                        CODE OF ETHICS<br><br>
-
-                        I)INTEGRITY<br><br>
-
-                        A)Character involves us personally, professionally and in the business
-                        community. Ones' personal Character is power and a reflection on
-                        the reputation of the Recognition Roundtable.<br><br>
-
-                        B)Loyalty to our fellow members, our industry, our vendor partners,
-                        our community, and our family must be at the forefront of the
-                        purpose of the Recognition Roundtable.<br><br>
-
-                        C)Positive Attitude with our speech and actions within the
-                        Recognition Roundtable meetings and the business community are
-                        imperative. All members should have full confidence in what is said
-                        in Recognition Roundtable meetings remains private and not shared
-                        with anyone outside.<br><br>
-
-                        D)Respect the opinions and thoughts of our members and our
-                        industry associates. Show respect to fellow Recognition Roundtable
-                        members by not actively nor competitively competing with known
-                        member's accounts.<br><br>
-
-                        E)Sharing Information with other Recognition Roundtable members
-                        shall be held in strict confidentiality and solitude.<br><br>
-</p>
-                    </center>
-                </center>
-            </div>
-            </center>
-        </center>
-        </div>
-        <br>
-        <div class="footer">
-            <center>
-                <p style="text-shadow: black 0 1px 15px;">© 2024 Recognition Roundtable. All Rights Reserved.</p>
-            </center>
-        </div>
-    </body>
+</body>
 </html>

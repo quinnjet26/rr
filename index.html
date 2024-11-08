@@ -1,321 +1,303 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <title>Recognition Roundtable</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="favicon.png">
-    <script>
-    function openNav() {
-      document.getElementById("navigationbar2").style.display = "block";
-      document.getElementById("close").style.display = "block";
-      document.getElementById("navigationbar2").style.width = "100%";
-    }
-
-    function closeNav() {
-      document.getElementById("navigationbar2").style.width = "0%";
-      document.getElementById("close").style.display = "none";
-      document.getElementById("navigationbar2").style.display = "none";
-    }
-    </script>
     <style>
-        .close {
-            display:none;
-        }
         @font-face {
-            font-family:paragraph;
+            font-family: paragraph;
             src: url(paragraph.ttf);
         }
-        .bodycontent1 {
-            display:flex;
-            background-color: rgba(0, 0, 0, 0.5);
-            border-color: goldenrod;
-            border-radius: 0px;
-            border-style: inset;
-            border-width: 5px;
-            width: 70%;
-            align-items:center;
-            justify-content:center;
-        }
-        .footer {
-            border-width: 0px;
-            width: 90%;
-            height:5%;
-            margin:0px;
-        }
-        p {
-            font-family: paragraph;
-            color: white;
-            text-decoration:none;
-            font-size:1vw;
-            line-height:1.6;
-        }
-        h3 {
-            font-family: paragraph;
-            color: white;
-            font-size:2vw;
-        }
-        body {
-            margin: 0px;
-            -webkit-text-size-adjust: none;
-            background-image: url(mainbackground.png);
-        }
-        .scroll-container::-webkit-scrollbar {
-          display: none;
-        }
-        body::-webkit-scrollbar {
-          display: none;
-        }
+
         @font-face {
             font-family: title;
-            src: url(title.ttf);
+            src: url(title.otf);
         }
-        .gradient-text {
-            background-color: #f3ec78;
-            background-image: linear-gradient(white, darkgoldenrod);
-            background-size: 100%;
-            -webkit-background-clip: text;
-            -moz-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            -moz-text-fill-color: transparent;
-            filter: drop-shadow(0px 0px 15px darkgrey);
-            width:100%;
+
+        @font-face {
+            font-family: funnysans;
+            src: url(funnysans.ttf);
         }
-        .title {
+
+        body {
+            margin: 0;
+            padding: 0;
+            color: white;
+            min-height: 100vh;
             display: flex;
-            width: 100%;
-            height: 100px;
-            align-items:center;
-            background-image: url(background.jpg);
-            margin: 0px;
+            flex-direction: column;
+            justify-content: flex-start;
+            background-image: url('mainbackground.png');
             background-repeat: no-repeat;
             background-size: cover;
-            color: white;
-            font-size: 4vw;
-            line-height: 2em;
-            box-shadow: 0px 5px 15px darkgrey;
-            margin-bottom:1%;
-            font-family:title;
+            animation: fadeIn 2s ease-in-out;
+            box-sizing: border-box;
+            overflow-x: hidden;  /* Prevent horizontal scrollbars */
         }
-        .title h1 {
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Title and header layout */
+        .title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.65);
+            padding: 15px;
+            width: 100%;
+            box-sizing: border-box;
+            box-shadow: 0px 5px 15px black;
+        }
+
+        .title .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .title .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .title .logo span {
+            font-size: 25px;
             font-family: title;
         }
-        .landscapetitle {
-            width:100%;
-            margin-left:1%;
-            margin-right:1%;
+
+        .title .contact-info {
+            font-size: 18px;
+            color: #f3ec78;
+            font-family: paragraph;
+            text-align: right;
         }
-        .navigationbar2 {
-            display:flex;
-            position: fixed;
-            background-color: black;
-            width: 10%;
-            height: 100%;
-            float: left;
+
+        /* Banner Section */
+        .bodycontent1 {
+            display: flex;
+            background-image: url('banner.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 60vh;
+            position: relative;
             justify-content: center;
-            box-shadow: 0px 5px 15px darkgrey;
-            z-index: 3;
+            align-items: flex-start;
+            flex-direction: column;
+            max-width: 100%;
+            animation: slideUp 1s ease-in-out;
+            padding: 20px 10px 10px 10px;
+            box-sizing: border-box;
         }
 
-        @media screen and (min-width: 1700px) {
-            .portraittitle {
-                display: none;
-            }
-            .landscapetitle {
-                display: flex;
-            }
-            .landscapetitle h1 {
-                width: 100%;
-                margin-right: 5%;
-                vertical-align: middle;
-            }
-            .mobilenav {
-                display:none;
-            }
-            .navigationbar2 {
-                display:none;
-            }
+        .banner-text {
+            font-family: title;
+            font-weight: bold;
+            text-align: left;
+            color: white;
+            font-size: 3rem;
+            padding: 10px;
+            z-index: 2;
+            max-width: 70%;
+            animation: fadeInText 2s ease-in-out;
         }
-        @media screen and (orientation: landscape) and (max-width: 1700px) {
-            .portraittitle {
-                display: none;
-            }
-            .landscapetitle {
-                display: flex;
-            }
-            .landscapetitle h1 {
-                width: 100%;
-                vertical-align: middle;
-            }
-            .rrlogo {
-                display: block;
-            }
-            p {
-                font-size:2vw;
-            }
-            h1 {
-                font-size:3vw;
-            }
-            .mobilenav {
-                display:none;
-            }
-            .navigationbar2 {
-                display:none;
-            }
-        }
-        @media screen and (orientation: portrait) {
-            .title {
-                font-size: 5vw;
-                float: center;
-                width: 100%;
-            }
-            .landscapetitle {
-                display: none;
-            }
-            .portraittitle {
-                display: flex;
-                align-items:center;
-                justify-content:center;
 
+        .banner-subtext {
+            font-family: paragraph;
+            font-size: 1.5rem;
+            text-align: left;
+            color: white;
+            max-width: 70%;
+            margin-top: 10px;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        .footer {
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            font-size: 1rem;
+            position: relative;
+            bottom: 0;
+            margin-top: 20px;
+        }
+
+        /* Link Boxes */
+        .silly_box_container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            gap: 20px;
+            flex-grow: 1;
+            padding: 0 10px; /* Add padding to avoid overflow */
+            box-sizing: border-box;
+        }
+
+        .fun_box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.75);
+            border-radius: 10px;
+            box-shadow: 0px 5px 25px black;
+            padding: 10px;
+            width: 200px;
+            min-width: 150px;
+            max-height: 300px; /* Prevent the boxes from becoming too large */
+            overflow: hidden; /* Prevent content from overflowing the boxes */
+            transition: transform 0.3s ease; /* Smooth hover effect */
+        }
+
+        .fun_box img {
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .fun_box h1 {
+            font-family: funnysans;
+            font-size: 1.5rem;
+            text-align: center;
+            color: white;
+            margin: 10px 0;
+        }
+
+        .fun_box:hover {
+            transform: scale(1.05); /* Slight zoom effect on hover */
+        }
+
+        /* Media Queries for responsiveness */
+        @media screen and (max-width: 1000px) {
+            .title .logo span {
+                font-size: 22px;
             }
-            .navigationbar {
-                display:none;
+
+            .banner-text {
+                font-size: 2.5rem;
             }
-            .navigationbar2 {
-                display:none;
+
+            .banner-subtext {
+                font-size: 1.2rem;
             }
-            .bodycontent1 {
-                margin-left:0px;
-                width:95%
-            }
+
             .footer {
-                margin-left:0px;
-                width:100%;
+                font-size: 0.9rem;
             }
-            p {
-                font-size:3vw;
-            }
-            h3 {
-                font-size:4vw;
-            }
-            .navigationbar p {
-                font-size:4vw;
-            }
-            .navigationbar2 p {
-                font-size:4vw;
+
+            .fun_box {
+                width: 45%;
             }
         }
-        @media (pointer: coarse) {
-            p {
-                font-size:6vw;
+
+        @media screen and (max-width: 600px) {
+            .title .logo span {
+                font-size: 20px;
             }
-            h3 {
-                font-size:8vw;
+
+            .banner-text {
+                font-size: 2rem;
             }
-            .navigationbar2 p {
-                font-size:8vw;
+
+            .banner-subtext {
+                font-size: 1rem;
             }
-            .navigationbar {
-                display:none;
-            }
-            .navigationbar2 {
-                display:none;
-            }
-            .title {
-                font-size: 5vw;
-                float: center;
-                width: 100%;
-            }
-            .title img {
-                height: 5%;
-            }
-            .landscapetitle {
-                display: none;
-            }
-            .portraittitle {
-                display: flex;
-                align-items:center;
-            }
-            .navigationbar {
-                display:none;
-            }
-            .navigationbar2 {
-                display:none;
-            }
-            .bodycontent1 {
-                margin-left:0px;
-                width:95%
-            }
+
             .footer {
-                margin-left:0px;
-                width:100%;
+                font-size: 0.8rem;
             }
-            p {
-                font-size:3vw;
+
+            .fun_box {
+                width: 90%;
             }
-            h3 {
-                font-size:4vw;
+
+            /* Prevent overlap and reduce size further in portrait */
+            .bodycontent1 {
+                height: 50vh;
             }
-            .navigationbar p {
-                font-size:4vw;
+
+            .banner-text {
+                font-size: 1.8rem;
             }
-            .navigationbar2 p {
-                font-size:4vw;
+
+            .banner-subtext {
+                font-size: 0.9rem;
             }
-            .mobilenav {
-                display:block;
+
+            .footer {
+                font-size: 0.8rem;
+                margin-top: 10px;
             }
+        }
+
+        /* Keyframe Animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes fadeInText {
+            0% { opacity: 0; transform: translateY(10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideUp {
+            0% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
         }
     </style>
-    <body>
-        <span class="mobilenav"style="font-size:7vw;cursor:pointer;color:white;position:absolute;z-index:2;margin:5px;" onclick="openNav()">&#9776;</span>
-        <div id="navigationbar2" class="navigationbar2">
-            <a class="close" id="close" href="javascript:void(0)" class="closebtn" style="font-size:11vw;cursor:pointer;color:white;position:absolute;z-index:4;margin:5px;margin-top:0px;text-decoration:none;" onclick="closeNav()">&times;</a>
-        <center>
-        <a href="index.html"><p>Home</p></a>
-        <a href="mission.html"><p>About Us</p></a>
-        <a href="benefits.html"><p>Join Us</p></a>
-        <a href="contact.html"><p>Contact Us</p></a>
-        </center>
+</head>
+<body>
+
+<!-- Title Section -->
+<div class="title">
+    <div class="logo">
+        <img src="rr.png" alt="Recognition Roundtable Logo" />
+        <a href="index.html"><span>Recognition Roundtable</span></a>
     </div>
-      <center>
-            <div class="title">
-                <div class="gradient-text">
-                    <div class="landscapetitle" style="align-items:center;">
-                      <img style="height:75px; margin-right:10px;" src="rr.png"></img><a href="index.html"><span style="font-size:30px; font-family:title;">Recognition Roundtable</span></a>
-                      <a style="display:block;  margin-left:auto;" href="mission.html"><span style="font-family:title; font-size:30px; display:block;margin-left:auto;">About Us</span></a>
-                      <a style="display:block;" href="benefits.html"><span style="font-family:title; font-size:30px; display:block; margin-left: 15px;">Join Us</span></a>
-                      <a style="display:block;" href="contact.html"><span style="font-family:title; font-size:30px; display:block; margin-left: 15px; margin-right:45px;">Contact Us</span></a>
-                    </div>
-                    <center>
-                    <div class="portraittitle">
-                      <span style="font-size:4vw; font-family:title;">RECOGNITION</span>
-                        <img style="height:75px; margin:none;" src="rr.png" />
-                      <span style="font-size:4vw; font-family:title;">ROUNDTABLE</span>
-                    </div>
-                </div>
-            </div>
-            <center>
-            <div class="bodycontent1">
-                <center>
-                    <center>
-                        <h3>Welcome!</h3>
-                        <p>We are Recognition Roundtable, a place where ideas and success collide! Discover the ultimate networking opportunity for experienced recognition dealers. Our exclusive community of industry professionals promotes growth and the highest level of professionalism.<br><br>
+    <div class="contact-info">
+        <span><p><a href="tel:+13527322249">Phone: (352) 732-2249</a></p></span>
+    </div>
+</div>
 
-                        We’re passionate about delivering recognition products and services of the highest quality, with dependable, on-time delivery and reasonable, fair pricing. With strict qualifications and an elite membership, Recognition Roundtable is the ultimate goal for industry leaders. Though exclusive, the rewards of membership are mouthwatering.<br><br>
+<!-- Banner Section -->
+<div class="bodycontent1">
+    <div class="banner-text">
+        <h1>Welcome to Recognition Roundtable!</h1>
+    </div>
+    <div class="banner-subtext">
+        <p><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong><br>
+            Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.</p>
+    </div>
+</div>
 
-                        Join us for advanced education, product and service discounts, and to be a part of a group dedicated to integrity and the best offerings.<br><br>
+<!-- Fun Boxes for Links -->
+<div class="silly_box_container">
+    <div class="fun_box">
+        <img src="info.png" alt="About Us">
+        <a href="mission.html"><h1>About Us</h1></a>
+    </div>
+    <div class="fun_box">
+        <img src="contact.png" alt="Contact Us">
+        <a href="contact.html"><h1>Contact Us</h1></a>
+    </div>
+    <div class="fun_box">
+        <img src="join.png" alt="Join Us">
+        <a href="qualifications.html"><h1>Join Us</h1></a>
+    </div>
+</div>
 
-                            Use the navigation bar on the left side to access membership benefits, contact information, or member qualifcations. Alternatively, on mobile devices, you may access the menu on the top left to access these web pages.</p>
-                    </center>
-                </center>
-            </div>
-            </center>
-        </center>
-        </div>
-        <br>
-        <div class="footer">
-            <center>
-                <p style="text-shadow: black 0 1px 15px;">© 2024 Recognition Roundtable. All Rights Reserved.</p>
-            </center>
-        </div>
-    </body>
+<!-- Footer -->
+<div class="footer">
+    <p style="text-shadow: black 0 1px 15px;">© 2024 Recognition Roundtable. All Rights Reserved.</p>
+</div>
+
+</body>
 </html>
