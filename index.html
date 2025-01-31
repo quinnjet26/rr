@@ -80,8 +80,8 @@
         .bodycontent1 {
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
+            justify-content: center;  /* Vertically center content */
+            align-items: center;  /* Horizontally center content */
             background-image: url('banner.jpg');
             background-repeat: no-repeat;
             background-size: cover;
@@ -91,7 +91,7 @@
             position: relative;
             padding: 20px;
             box-sizing: border-box;
-            text-align: left;
+            text-align: center;  /* Center the text horizontally */
             overflow: hidden; /* Prevent text overflow */
         }
 
@@ -99,39 +99,46 @@
             font-family: title;
             font-weight: bold;
             color: white;
-            font-size: 3vw; /* Smaller text size */
+            font-size: 3vw;
             padding: 10px;
             z-index: 2;
             max-width: 80%;
-            word-wrap: break-word; /* Ensure text wraps within the container */
+            word-wrap: break-word;
             overflow-wrap: break-word;
             animation: fadeInText 2s ease-in-out;
             margin-bottom: 10px;
-            /* Allow some space below the text to prevent cutting off */
         }
 
         .banner-subtext {
             font-family: paragraph;
             font-size: 2vw;
-            text-align: left;
+            text-align: center;  /* Center the subtext */
             color: white;
             max-width: 80%;
             margin-top: 10px;
             line-height: 1.5;
             word-wrap: break-word;
-            padding-bottom: 20px; /* Add padding to ensure text doesn't hit the bottom */
+            padding-bottom: 20px;
         }
 
-        /* Footer */
-        .footer {
-            width: 100%;
-            text-align: center;
-            padding: 10px;
-            background-color: rgba(0, 0, 0, 0.7);
-            font-size: 1rem;
-            position: relative;
-            bottom: 0;
-            margin-top: 20px;
+        /* Updated Dotted Text Spacing */
+        .dotted-text {
+            display: flex;
+            justify-content: center;
+            font-size: 2.5vw;  /* Adjust the font size for better visibility */
+            gap: 40px;  /* Add spacing between each word */
+            font-weight: bold;
+            color: white;
+        }
+
+        .dotted-text span {
+            display: inline-block;
+            padding: 0 5px;  /* Adjust the padding between words */
+        }
+
+        .dotted-text .dot {
+            font-weight: normal;
+            font-size: 2.5vw;  /* Same size as the text to make the dots more consistent */
         }
 
         /* Link Boxes */
@@ -156,9 +163,9 @@
             padding: 10px;
             width: 200px;
             min-width: 150px;
-            max-height: 300px; /* Prevent the boxes from becoming too large */
-            overflow: hidden; /* Prevent content from overflowing the boxes */
-            transition: transform 0.3s ease; /* Smooth hover effect */
+            max-height: 300px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
         }
 
         .fun_box img {
@@ -176,95 +183,19 @@
         }
 
         .fun_box:hover {
-            transform: scale(1.05); /* Slight zoom effect on hover */
+            transform: scale(1.05);
         }
 
-        /* Media Queries for better responsiveness */
-        @media screen and (max-width: 960px) {
-            .title .logo span {
-                font-size: 20px;
-            }
-
-            .banner-text {
-                font-size: 4vw;  /* Slightly smaller text */
-            }
-
-            .banner-subtext {
-                font-size: 2.5vw;
-            }
-
-            .footer {
-                font-size: 0.9rem;
-            }
-
-            .fun_box {
-                width: 45%;
-            }
-        }
-
-        @media screen and (max-width: 600px) {
-            .title .logo span {
-                font-size: 18px;
-            }
-
-            .banner-text {
-                font-size: 5vw;  /* Further reduced size */
-            }
-
-            .banner-subtext {
-                font-size: 3vw;
-            }
-
-            .footer {
-                font-size: 0.8rem;
-            }
-
-            .fun_box {
-                width: 90%;
-            }
-
-            /* Reduce the height of the banner */
-            .bodycontent1 {
-                height: 60vh;
-            }
-        }
-
-        /* High-DPI Devices */
-        @media screen and (min-device-pixel-ratio: 2) {
-            .banner-text {
-                font-size: 3vw;  /* Smaller font on higher DPI displays */
-            }
-
-            .banner-subtext {
-                font-size: 2vw;
-            }
-
-            .footer {
-                font-size: 0.85rem;
-            }
-        }
-
-        /* Low-resolution Devices */
-        @media screen and (max-width: 320px) {
-            .banner-text {
-                font-size: 6vw;  /* Large reduction on very low-res screens */
-            }
-
-            .banner-subtext {
-                font-size: 4vw;
-            }
-
-            .footer {
-                font-size: 0.75rem;
-            }
-
-            .fun_box {
-                width: 100%;
-            }
-
-            .bodycontent1 {
-                height: 60vh;
-            }
+        /* Footer */
+        .footer {
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            font-size: 1rem;
+            position: relative;
+            bottom: 0;
+            margin-top: 20px;
         }
 
         /* Keyframe Animations */
@@ -282,6 +213,7 @@
             0% { transform: translateY(20px); opacity: 0; }
             100% { transform: translateY(0); opacity: 1; }
         }
+
     </style>
 </head>
 <body>
@@ -292,19 +224,15 @@
         <img src="rr.png" alt="Recognition Roundtable Logo" />
         <a href="index.html"><span>Recognition Roundtable</span></a>
     </div>
-    <div class="contact-info">
-        <span><p><a href="tel:+13527322249">Phone: (352) 732-2249</a></p></span>
-    </div>
 </div>
 
 <!-- Banner Section -->
 <div class="bodycontent1">
     <div class="banner-text">
-        <h1>Welcome to Recognition Roundtable!</h1>
+        <h1>THE RECOGNITION ROUNDTABLE</h1>
     </div>
-    <div class="banner-subtext">
-        <p><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong><br>
-            Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.</p>
+    <div class="dotted-text">
+        <span>SERVICE</span><span class="dot">•</span><span>DEDICATION</span><span class="dot">•</span><span>QUALITY</span>
     </div>
 </div>
 
@@ -319,8 +247,8 @@
         <a href="contact.html"><h1>Contact Us</h1></a>
     </div>
     <div class="fun_box">
-        <img src="join.png" alt="Join Us">
-        <a href="qualifications.html"><h1>Join Us</h1></a>
+        <img src="join.png" alt="Membership Requirements">
+        <a href="qualifications.html"><h1>Membership Requirements</h1></a>
     </div>
     <div class="fun_box">
         <img src="membership.png" alt="Our Membership">
